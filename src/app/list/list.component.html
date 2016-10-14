@@ -3,25 +3,23 @@
     <img src="../assets/star.svg" alt="logo">
   </figure>
 </div>
-<main *ngIf ='stars'>
-  <ul class="ed-container">
-     <li class=" ed-item s100 m50" *ngFor ='let one of stars.results; let i = index;'>
+<main *ngIf ='stars' class="ed-container">
+  <ul class=" ed-item s100 m50">
+     <li  *ngFor ='let one of stars.results; let i = index;'>
        <div class="lista lista-{{i}}"
        (click)="show(stars.results[i])">
            <h2>{{one.name}}</h2>
        </div>
-     </li>º
+     </li>
+     <div class="btn">
+       <button *ngIf='stars.next !== null' (click)="next(stars.next)">next</button>
+       <button *ngIf='stars.previous !== null' (click)="next(stars.previous)">previous</button>
+     </div>
   </ul>
-  <div class="btn">
-    <button *ngIf='stars.next !== null' (click)="next(stars.next)">next</button>
-    <button *ngIf='stars.previous !== null' (click)="next(stars.previous)">previous</button>
-  </div>
-  <div class='ed-container' *ngIf="jsonData">
-    <div class="ed-item s100">
-      <figure class="wars">
-        <img src="../assets/person/{{jsonData.name}}.png" alt="">
-        <a routerLink="/people/{{jsonData.url.substring(jsonData.url.length - 3)}}" routerLinkActive="active"><button type="button" name="button"> + Info </button> </a>
-      </figure>
-    </div>
+  <div class="ed-item s100 m50" *ngIf="jsonData">
+    <figure class="wars">
+      <img src="../assets/person/{{jsonData.name}}.png" alt="">
+      <a routerLink="/people/{{jsonData.url.substring(jsonData.url.length - 3)}}" routerLinkActive="active"><button type="button" name="button"> + Info </button> </a>
+    </figure>
   </div>
 </main>

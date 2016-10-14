@@ -6,6 +6,7 @@ $devMode    : false
 
 
 h1
+  font-size: 1.5em
   width: 100%
   text-shadow: 1px 1px 20px rgba(0,0,0,.7)
   background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(lightgreen,1) 100%)
@@ -53,12 +54,16 @@ h1
     cursor: pointer
 
 
+
+
 .death
   position: relative
 
 .card
   position: relative
-  height: 85vh
+  display: flex
+  flex-wrap: wrap
+  height: auto
   overflow: hidden
   animation-name: manotas
   animation-duration: .5s
@@ -69,9 +74,7 @@ h1
     object-fit: contain
 
 .info
-  position: absolute
-  top: 0
-  right: 1em
+  position: relative
   color: #333
   text-align: left
   padding: .5em
@@ -96,6 +99,16 @@ h1
     border-radius: 3px
     border: 1px solid rgba(0,0,0,.7)
     cursor: pointer
+
+@media screen and (min-width: 768px)
+  h1
+    font-size: 2em
+  .card
+    height: 85vh
+  .info
+    position: absolute
+    top: 0
+    right: 1em
 
 @keyframes expan
   0%
