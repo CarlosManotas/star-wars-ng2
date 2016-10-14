@@ -1,0 +1,120 @@
+$cssCore    : false
+$cssHelpers : true
+$devMode    : false
+
+@import "../../ed-grid"
+
+
+h1
+  width: 100%
+  text-shadow: 1px 1px 20px rgba(0,0,0,.7)
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(lightgreen,1) 100%)
+  color: #555
+  box-shadow: 0 0 15px 5px lightgreen, inset 0 1px 10px white
+  border-radius: 0 20px 20px 0
+  position: relative
+  padding-left: 20%
+  animation-name: expan
+  animation-duration: .6s
+  animation-timing-function: ease-in-out
+  animation-iteration-count: infinite
+  &::after
+    position: absolute
+    padding-top: .85em
+    padding-left: 1.2em
+    content: "Home"
+    font-size: .6em
+    background-color: #ddd
+    left: 0
+    top: 0
+    bottom: 0
+    margin: auto 0
+    height: 140%
+    width: 20%
+    border-radius: 5px
+    box-shadow: 0 0 15px 5px #000, inset 0 0 15px black
+  &::before
+    content: ""
+    position: absolute
+    background-color: lightgreen
+    top: 0
+    bottom: 0
+    margin: auto 0
+    left: 40px
+    border: 1px solid white
+    width: 15px
+    height: 10px
+    border-radius: 3px
+    z-index: 1
+    animation-name: expan
+    animation-duration: .6s
+    animation-timing-function: ease-in-out
+    animation-iteration-count: infinite
+    cursor: pointer
+
+
+.death
+  position: relative
+
+.card
+  position: relative
+  height: 85vh
+  overflow: hidden
+  animation-name: manotas
+  animation-duration: .5s
+  animation-direction: alternate
+  animation-timing-function: ease-in-out
+  img
+    max-height: 100%
+    object-fit: contain
+
+.info
+  position: absolute
+  top: 0
+  right: 1em
+  color: #333
+  text-align: left
+  padding: .5em
+  h3
+    margin: 0
+
+.btn
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  flex-direction: row-reverse
+  width: 100%
+  text-align: right
+  max-width: 1200px
+  margin: auto
+  margin-bottom: 1em
+  padding: 0 15px
+  button
+    font-size: .8em
+    padding: .3em .5em
+    background-color: white
+    border-radius: 3px
+    border: 1px solid rgba(0,0,0,.7)
+    cursor: pointer
+
+@keyframes expan
+  0%
+    box-shadow: 0 0 15px 5px lightgreen, inset 0 1px 10px white
+  50%
+    box-shadow: 0 0 24px 5px lightgreen, inset 0 1px 10px white
+  100%
+    box-shadow: 0 0 15px 5px lightgreen, inset 0 1px 10px white
+
+
+
+
+@keyframes manotas
+  0%
+    transform: scale(0.2)
+    opacity: 0
+  85%
+    transform: scale(1.05)
+    opacity: .5
+  100%
+    transform: scale(1)
+    opacity: 1

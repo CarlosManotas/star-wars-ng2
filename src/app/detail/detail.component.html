@@ -1,0 +1,25 @@
+<main>
+  <div class="ed-container death" *ngIf='person'>
+    <div class="ed-item s100 abcenter">
+      <h1 (click)="goBack()">
+        {{person.name | uppercase}}
+      </h1>
+    </div>
+    <div class="ed-item s100 abcenter card">
+      <img src="../assets/person/{{person.name}}.png" alt="">
+      <pre class="info" style="background-color:rgba(255,255,255,.8)" >
+        <h3>Height: <span>{{person.height}}</span></h3>
+        <h3>Mass: <span>{{person.mass}}</span></h3>
+        <h3>Skin color: <span>{{person.skin_color}}</span></h3>
+        <h3>Hair color: <span>{{person.hair_color}}</span></h3>
+        <h3>Eye color: <span>{{person.eye_color}}</span></h3>
+        <h3>Birth year: <span>{{person.birth_year}}</span></h3>
+        <h3>gender: <span>{{person.gender}}</span></h3>
+      </pre>
+    </div>
+    <div class="btn">
+      <button (click)="next()">next</button>
+      <button (click)="previous()">previous</button>
+    </div>
+  </div>
+</main>

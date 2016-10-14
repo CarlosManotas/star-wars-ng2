@@ -1,0 +1,194 @@
+$cssCore    : false
+$cssHelpers : true
+$devMode    : false
+
+@import "../../ed-grid"
+
+div.lista
+  position: relative
+  animation-name: manotas
+  animation-timing-function: ease-in
+  cursor: pointer
+
+@for $i from 1 through 10
+  .lista-#{$i}
+    animation-duration: .09s * $i
+
+
+img[alt="logo"]
+  margin-top: 1em
+
+h2
+  text-align: center
+  margin: .5em 0
+  margin-bottom: 1em
+  position: relative
+
+li
+  list-style: none
+  position: relative
+
+
+
+ul
+  padding: 0
+  margin: 0
+  margin-top: 2em
+
+li:nth-child(odd)
+  h2
+    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(#3784d6,1) 100%)
+    color: #555
+    box-shadow: 0 0 15px 5px #3784d6, inset 0 1px 10px white
+    border-radius: 0 20px 20px 0
+    animation-name: onda2
+    animation-timing-function: ease-in
+    animation-iteration-count: infinite
+    animation-duration: .5s
+    &::after
+      position: absolute
+      content: ""
+      background-color: #ddd
+      left: 0
+      top: 0
+      bottom: 0
+      margin: auto 0
+      height: 118%
+      width: 20%
+      border-radius: 5px
+      box-shadow: 0 0 15px 5px #000, inset 0 0 15px black
+    &::before
+      content: ""
+      position: absolute
+      background-color: #3784d6
+      top: 0
+      bottom: 0
+      margin: auto 0
+      left: 40px
+      border: 1px solid white
+      width: 15px
+      height: 10px
+      border-radius: 3px
+      z-index: 1
+
+li:nth-child(even)
+  h2
+    $color: #e51115
+    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(#e51115,1) 100%)
+    color: #555
+    border-radius: 20px 0 0 20px
+    box-shadow: 0 0 15px 5px $color, inset 0 1px 10px white
+    animation-name: onda
+    animation-timing-function: ease-in
+    animation-iteration-count: infinite
+    animation-duration: .5s
+    &::after
+      position: absolute
+      content: ""
+      background-color: #ddd
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto 0
+      height: 118%
+      width: 20%
+      border-radius: 5px
+      box-shadow: 0 0 15px 5px #000,inset 0 0 8px black
+    &::before
+      content: ""
+      position: absolute
+      background-color: #e51115
+      top: 0
+      bottom: 0
+      margin: auto 0
+      right: 40px
+      border: 1px solid white
+      width: 15px
+      height: 10px
+      border-radius: 3px
+      z-index: 1
+
+.btn
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  flex-direction: row-reverse
+  text-align: right
+  max-width: 1200px
+  margin: auto
+  margin-bottom: 1em
+  padding: 0 15px
+  button
+    font-size: .8em
+    padding: .3em .5em
+    background-color: white
+    border-radius: 3px
+    border: 1px solid rgba(0,0,0,.7)
+    cursor: pointer
+
+pre
+  max-width: 1200px
+  margin: auto
+  margin-top: 1em
+  padding: .5em 0
+  background-color: rgba(#333,.8)
+  color: white
+
+.mostrar
+  background-color: #ddd
+  border: 1px solid red
+
+
+.wars
+  display: flex
+  justify-content: center
+  align-items: center
+  max-width: 100%
+  height: 400px
+  line-height: 0
+  animation-name: manotas
+  animation-duration: .5s
+  animation-direction: alternate
+  animation-timing-function: ease-in-out
+  position: relative
+  img
+    max-height: 100%
+    max-width: 100%
+
+a
+  position: absolute
+  right: 2em
+  button
+    font-size: .8em
+    padding: .3em .5em
+    background-color: white
+    border-radius: 3px
+    border: 1px solid rgba(0,0,0,.7)
+    cursor: pointer
+
+@keyframes manotas
+  0%
+    transform: scale(0.2)
+    opacity: 0
+  85%
+    transform: scale(1.05)
+    opacity: .5
+  100%
+    transform: scale(1)
+    opacity: 1
+
+@keyframes onda
+  0%
+    box-shadow: 0 0 15px 5px #e51115, inset 0 1px 10px white
+  50%
+    box-shadow: 0 0 24px 5px #e51115, inset 0 1px 10px white
+  100%
+    box-shadow: 0 0 15px 5px #e51115, inset 0 1px 10px white
+
+@keyframes onda2
+  0%
+    box-shadow: 0 0 15px 5px #3784d6, inset 0 1px 10px white
+  50%
+    box-shadow: 0 0 24px 5px #3784d6, inset 0 1px 10px white
+  100%
+    box-shadow: 0 0 15px 5px #3784d6, inset 0 1px 10px white
