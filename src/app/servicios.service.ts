@@ -29,7 +29,7 @@ export class ServiciosService {
   ];
 
   constructor(private http: Http) { }
-  private listaUrl = 'https://swapi.co/api/people/';
+  public listaUrl = 'https://swapi.co/api/people/';
   getList (){
     return this.http.get(this.listaUrl)
                   .map(res => res.json());
