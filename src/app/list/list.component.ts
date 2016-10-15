@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiciosService } from '../servicios.service'
+import { ServiciosService } from '../servicios.service';
 
 @Component({
   selector: 'app-list',
@@ -18,14 +18,18 @@ export class ListComponent implements OnInit {
                         this.stars = star
                       })
   }
-  next(nuevaUrl: string) {
-    this.listaService.getNew(nuevaUrl)
-                      .subscribe(nuevoJson =>{
-                        this.stars = nuevoJson
-                        this.jsonData = ""
-                      })
 
+  next(nuevaUrl: string) {
+       let id = nuevaUrl;
+       var nuevoId = id.split('/');
+       var finalId = nuevoId[nuevoId.length-1];
+       this.listaService.getNew(finalId)
+                         .subscribe(nuevoJson =>{
+                           this.stars = nuevoJson
+                           this.jsonData = ""
+                         })
   }
+
   show(data){
     this.jsonData = data;
   }

@@ -29,13 +29,13 @@ export class ServiciosService {
   ];
 
   constructor(private http: Http) { }
-  public listaUrl = 'https://swapi.co/api/people/';
+  private listaUrl = "https://swapi.co/api/people/";
   getList (){
     return this.http.get(this.listaUrl)
                   .map(res => res.json());
   }
   getNew (nuevaUrl:string){
-    return this.http.get(nuevaUrl )
+    return this.http.get(this.listaUrl + nuevaUrl )
                 .map(res => res.json());
   }
   getDetail (id:(string | number)){
