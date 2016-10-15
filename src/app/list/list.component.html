@@ -1,6 +1,6 @@
 <div class="ed-container">
   <figure class="ed-item abcenter">
-    <img src="../assets/star.svg" alt="logo">
+    <img src="assets/star.svg" alt="logo">
   </figure>
 </div>
 <main *ngIf ='stars' class="ed-container">
@@ -18,7 +18,7 @@
   </ul>
   <div class="ed-item s100 m50" *ngIf="jsonData">
     <figure class="wars">
-      <img src="../assets/person/{{jsonData.name}}.png" alt="">
+      <img src="assets/person/{{jsonData.name}}.png" alt="">
       <a routerLink="/people/{{jsonData.url.substring(jsonData.url.length - 3)}}" routerLinkActive="active"><button type="button" name="button"> + Info </button> </a>
     </figure>
   </div>
