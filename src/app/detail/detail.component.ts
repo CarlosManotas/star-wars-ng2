@@ -8,9 +8,8 @@ import { Location } from '@angular/common';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.sass']
 })
-export class DetailComponent implements OnInit , OnDestroy {
+export class DetailComponent implements OnInit  {
   person:any;
-  sub:any;
 
 
   constructor(private location:Location, private route: ActivatedRoute,
