@@ -29,7 +29,7 @@ export class DetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
   }
 
   next() {
