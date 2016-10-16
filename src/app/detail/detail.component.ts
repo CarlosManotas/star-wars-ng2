@@ -1,4 +1,4 @@
-import { Component, OnInit ,OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ServiciosService } from '../servicios.service';
 import { Location } from '@angular/common';
@@ -8,12 +8,13 @@ import { Location } from '@angular/common';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.sass']
 })
-export class DetailComponent implements OnInit , OnDestroy {
+export class DetailComponent implements OnInit {
   person:any;
-  sub:any;
 
 
-  constructor(private location:Location, private route: ActivatedRoute,
+
+  constructor(private location:Location,
+              private route: ActivatedRoute,
               private router: Router,
               private listaService: ServiciosService) { }
 
@@ -25,10 +26,6 @@ export class DetailComponent implements OnInit , OnDestroy {
                             this.person = nuevaData
                           })
      });
-  }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
   }
 
   goBack() {
