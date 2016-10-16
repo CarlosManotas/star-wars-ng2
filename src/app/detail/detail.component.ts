@@ -8,7 +8,10 @@ import { Location } from '@angular/common';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.sass']
 })
+
 export class DetailComponent implements OnInit {
+
+
   person:any;
 
 
@@ -29,7 +32,7 @@ export class DetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 
   next() {
