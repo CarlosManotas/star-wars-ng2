@@ -1,4 +1,4 @@
-import { Component, OnInit ,OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ServiciosService } from '../servicios.service';
 import { Location } from '@angular/common';
@@ -25,10 +25,6 @@ export class DetailComponent implements OnInit , OnDestroy {
                             this.person = nuevaData
                           })
      });
-  }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
   }
 
   goBack() {
