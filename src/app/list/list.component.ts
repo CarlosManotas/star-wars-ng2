@@ -31,11 +31,11 @@ export class ListComponent implements OnInit {
                          })
   }
 
-  show(data){
+  show(data) {
     this.jsonData = data;
   }
 
-  onSelect(one: any){
+  onSelect(one: any) {
     this.selectedPerson = one;
   }
 }
