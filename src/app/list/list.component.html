@@ -2,13 +2,17 @@
   <figure class="ed-item abcenter">
     <img src="assets/star.svg" alt="logo">
   </figure>
+  <div class="ed-item abcenter">
+    <a class="github-button" href="https://github.com/CarlosManotas/star-wars-ng2" data-icon="octicon-star" data-style="mega" data-count-href="/CarlosManotas/star-wars-ng2/stargazers" data-count-api="/repos/CarlosManotas/star-wars-ng2#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star CarlosManotas/star-wars-ng2 on GitHub">Star</a>
+  </div>
 </div>
 <main *ngIf ='stars' class="ed-container">
   <ul class=" ed-item s100 m50">
      <li  *ngFor ='let one of stars.results; let i = index;'>
        <div class="lista lista-{{i}}"
+       (click)="onSelect(one)"
        (click)="show(stars.results[i])">
-           <h2>{{one.name}}</h2>
+           <h2 [class.selected]="one === selectedPerson">{{one.name}}</h2>
        </div>
      </li>
      <div class="btn">

@@ -10,6 +10,7 @@ import { ServiciosService } from '../servicios.service';
 export class ListComponent implements OnInit {
   stars:any;
   jsonData:any;
+  selectedPerson:any;
   constructor(private listaService: ServiciosService) { }
 
   ngOnInit() {
@@ -34,4 +35,7 @@ export class ListComponent implements OnInit {
     this.jsonData = data;
   }
 
+  onSelect(one: any){
+    this.selectedPerson = one;
+  }
 }

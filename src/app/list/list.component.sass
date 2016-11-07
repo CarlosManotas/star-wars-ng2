@@ -45,6 +45,12 @@ li:nth-child(odd)
     animation-timing-function: ease-in
     animation-iteration-count: infinite
     animation-duration: .5s
+    &.selected
+      background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(lightgreen,1) 100%)
+      box-shadow: 0 0 15px 5px lightgreen, inset 0 1px 10px white
+      animation-name: expan
+      &::before
+        background-color: lightgreen
     &::after
       position: absolute
       content: ""
@@ -82,6 +88,12 @@ li:nth-child(even)
     animation-timing-function: ease-in
     animation-iteration-count: infinite
     animation-duration: .5s
+    &.selected
+      background: radial-gradient(ellipse at center, rgba(255,255,255,1) 10%, rgba(lightgreen,1) 100%)
+      box-shadow: 0 0 15px 5px lightgreen, inset 0 1px 10px white
+      animation-name: expan
+      &::before
+        background-color: lightgreen
     &::after
       position: absolute
       content: ""
@@ -169,6 +181,8 @@ a
     border: 1px solid rgba(0,0,0,.7)
     cursor: pointer
 
+
+
 @keyframes manotas
   0%
     transform: scale(0.2)
@@ -195,3 +209,12 @@ a
     box-shadow: 0 0 24px 5px #3784d6, inset 0 1px 10px white
   100%
     box-shadow: 0 0 15px 5px #3784d6, inset 0 1px 10px white
+
+
+@keyframes expan
+  0%
+    box-shadow: 0 0 15px 5px lightgreen, inset 0 1px 10px white
+  50%
+    box-shadow: 0 0 24px 5px lightgreen, inset 0 1px 10px white
+  100%
+    box-shadow: 0 0 15px 5px lightgreen, inset 0 1px 10px white
