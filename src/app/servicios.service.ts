@@ -8,8 +8,8 @@ export class ServiciosService {
 
   constructor(private http: Http) { }
 
-  private listaUrl = "http://swapi.co/api/people/";
-  private detailUrl = "http://swapi.co/api/people/?search=";
+  private listaUrl = "https://swapi.dev/api/people/";
+  private detailUrl = "https://swapi.dev/api/people/?search=";
 
   getList (){
     return this.http.get(this.listaUrl)
